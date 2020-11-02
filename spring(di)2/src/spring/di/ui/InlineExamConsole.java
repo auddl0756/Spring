@@ -2,29 +2,30 @@ package spring.di.ui;
 
 import spring.di.entity.Exam;
 
-public class GridExamConsole implements ExamConsole {
+public class InlineExamConsole implements ExamConsole {
 	private Exam exam;
 	
 	//컨트롤 스페이스 ->  생성자 자동 선택.
-	public GridExamConsole() {
+	public InlineExamConsole() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public GridExamConsole(Exam exam) {
+	public InlineExamConsole(Exam exam) {
 		this.exam = exam;
 	}
 	
-	@Override
-	public void print() {
-		System.out.println(exam.total());
-		System.out.println(exam.avg());
-		
-	}
-
 	@Override
 	public void setExam(Exam exam) {
 		// TODO Auto-generated method stub
 		this.exam=exam;
 	}
+
+	@Override
+	public void print() {
+		System.out.printf("total = %d , average = %f\n",exam.total(),exam.avg());
+		
+	}
+
+
 
 }

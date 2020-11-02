@@ -11,17 +11,17 @@ import spring.di.ui.InlineExamConsole;
 public class Program {
 
 	public static void main(String[] args) {
+		
+	//이것을 설정으로 빼면.. 객체화해서 전달해줄 누군가가 필요. ==> 누군가 =spring.
+	//spring에게 지시하도록 변경. ==> xml에서 하도록.
+	/*
 		Exam exam = new NewlecExam();
-		
-//		ExamConsole console = new InlineExamConsole(exam);
-//		console.print();
-		
-		//dependency injection :: 조립.
-		//ExamConsole console = new GridExamConsole(exam);
-		
 		//using setter.
 		ExamConsole console =new GridExamConsole();		
 		console.setExam(exam);
+	*/
+		
+		ExamConsole console = ?;
 		console.print();
 
 	}
