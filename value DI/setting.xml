@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- id = 변수명   class = 객체명 -->
+	<bean id="exam" class="부품조립.entity.NewlecExam">
+		<property name="kor" value="10"> </property>
+		<property name="eng" value="5"> </property>
+		<property name="math" value="3"></property>
+		
+		<!--
+		<property name="com" value="100"></property>
+		  -->
+		  
+		<property name="com">
+			<value>100</value>
+		</property>
+	</bean>
+	
+	<bean id="console" class="부품조립.ui.InlineExamConsole">
+		<property name="exam" ref="exam"></property>
+	</bean>
+	
+</beans>
