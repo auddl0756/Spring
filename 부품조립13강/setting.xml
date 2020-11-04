@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+	
+	
+	<context:annotation-config></context:annotation-config>
+	
+	<!-- id = 변수명   class = 객체명 -->
+	<!-- <bean id="exam" class="부품조립.entity.NewlecExam">-->
+	
+	<!-- 순서로 지정 가능:: index -->
+	<!-- 
+		<constructor-arg index="0" value="10"></constructor-arg>
+		<constructor-arg index="1" value="10"></constructor-arg>
+		<constructor-arg index="2" value="10"></constructor-arg>
+		<constructor-arg index="3" value="10"></constructor-arg>
+	 -->
+	 
+	 <!-- 이름으로 지정 가능::name -->
+	 <!-- 
+	 	<constructor-arg name="kor" value="10"></constructor-arg>
+		<constructor-arg name="eng" value="20"></constructor-arg>
+		<constructor-arg name="math" value="40"></constructor-arg>
+		<constructor-arg name="com" value="100"></constructor-arg>
+	  -->
+		
+	<!-- type 속성도 지정 가능. -->
+	
+		
+	<!--  namespace 'p' 추가해서.. -->
+	<bean id="exam1" class="부품조립.entity.NewlecExam" p:kor="10" p:eng="10"/>
+	<bean id="exam2" class="부품조립.entity.NewlecExam" p:kor="100" p:eng="100"/>
+	
+	
+	
+	<bean id="console" class="부품조립.ui.InlineExamConsole">
+		<!--  <property name="exam" ref="exam"></property>-->
+	</bean> 
+	
+	
+	<!-- <bean id="exams" class="java.util.ArrayList" >
+		<constructor-arg>
+			<list>
+				<bean class="부품조립.entity.NewlecExam" p:kor="10" p:eng="20"/>
+				<ref bean="exam"></ref>
+				
+			</list>
+		</constructor-arg>
+	</bean> -->
+	
+	<!-- <util:list id="exams" list-class="java.util.ArrayList">
+		<bean class="부품조립.entity.NewlecExam" p:kor="10" p:eng="20"/>
+		<ref bean="exam"></ref>
+		
+	</util:list> -->
+	
+</beans>
