@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
+	
+	<!-- 모든 설정을 이 xml파일에서. -->
+	
+	<bean id="target" class="aop.entity.NewlecExam" p:kor="1" p:eng="1" p:math="1" p:com="1"></bean>
+	
+	<!-- 곁다리업무 삽입을 위한. -->
+	<bean id="logAroundAdvice" class="aop.advice.LogAroundAdvice"/>
+	<bean id="logBeforeAdvice" class="aop.advice.LogBeforeAdvice"/>
+	<bean id="proxy" class="org.springframework.aop.framework.ProxyFactoryBean">
+		<!-- setter ,reference -->
+		<property name="target" ref="target" />	
+		<property name="interceptorNames">
+			<list>
+				<value>logAroundAdvice</value>
+				<value>logBeforeAdvice</value>
+			</list>
+		</property>
+	</bean> 
+	
+	<!-- 주업무 내용만 호출하도록. -->
+	<!-- <bean id="exam" class="aop.entity.NewlecExam" p:kor="1" p:eng="1" p:math="1" p:com="1"></bean> -->
+</beans>
