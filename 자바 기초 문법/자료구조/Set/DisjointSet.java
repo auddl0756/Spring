@@ -1,10 +1,10 @@
 package basic;
 
-class DjsjointSet {
+class DisjointSet {
 	final int MAX;
 	int[] parent;
 	
-	public DjsjointSet() {
+	public DisjointSet() {
 		this.MAX=10000;
 		parent =new int[MAX];
 		for(int i=0;i<MAX;i++) {
