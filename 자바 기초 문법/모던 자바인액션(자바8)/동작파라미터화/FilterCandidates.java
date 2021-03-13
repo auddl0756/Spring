@@ -65,6 +65,8 @@ public class FilterCandidates {
 //		}
 //	}
 	
+	
+	//just DTO class
 	static class Candidate{
 		private int algorithmScore;
 		private int CSKnowledgeScore;
