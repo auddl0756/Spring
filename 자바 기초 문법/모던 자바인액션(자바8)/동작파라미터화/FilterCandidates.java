@@ -7,7 +7,9 @@ import java.util.List;
 //filter candidates by 2 basis using "Behavior Parameterization"
 // "Behavior Parameterization" : one method, 
 // 			diffrent behavior by parameter(implemented method in object predicate )
-
+// 			
+// 			// 동작을 추상화하여 변화하는 요구사항에 대응할 수 있는 코드를 작성하였다.
+// 요구사항이 바뀌어도 filter메서드는 그대로 새로운 predicate 구현을 추가하면 된다.
 public class FilterCandidates {
 	public static void main(String[] args) {
 		
