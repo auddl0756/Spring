@@ -12,7 +12,8 @@ public class 정렬 {
 
         List<Music> musics = new ArrayList<>();
         //access via sample and create "Music" object
-        //else just make "Music" object exist using "static" keyword
+        //or just make "Music" object exist using "static" keyword
+	//then you can access Music object not via Outer class.
         musics.add(sample.new Music("classic",123));
         musics.add(sample.new Music("pop",1234));
         musics.add(sample.new Music("hip",12345));
